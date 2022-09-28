@@ -1,0 +1,20 @@
+#!/bin/sh
+# autopkgtest for coinor-cgl
+
+set -e
+
+WORKDIR=$(mktemp -d)
+SRC=cgl1.cpp
+trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
+cp Cgl/examples/$SRC $WORKDIR/
+cp Cgl/test/CglTestData/capPlan1.mps $WORKDIR/
+
+cd $WORKDIR
+
+g++ $SRC -lCgl -lClp -lOsiClp -lOsi -lCoinUtils -I/usr/include/coin -o demo
+echo "build OK"
+
+./demo capPlan1 min
+ls -ln
+
+echo "run OK"

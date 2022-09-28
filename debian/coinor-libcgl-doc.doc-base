@@ -1,0 +1,9 @@
+Document: coinor-cgl
+Title: coinor-cgl API documentation
+Author: Various. See /usr/share/coin/doc/Cgl/AUTHORS.
+Abstract: Doxygen-generated API documentation for coinor-cgl.
+Section: Science/Mathematics
+
+Format: HTML
+Index: /usr/share/doc/coinor-libcgl-doc/html/index.html
+Files: /usr/share/doc/coinor-libcgl-doc/html/*.html

@@ -1,0 +1,5 @@
+usr/lib/*/libCgl.la
+usr/share/coin/doc/Cgl/AUTHORS
+usr/share/coin/doc/Cgl/LICENSE
+usr/share/coin/doc/Cgl/README
+usr/share/coin/doc/Cgl/cgl_addlibs.txt

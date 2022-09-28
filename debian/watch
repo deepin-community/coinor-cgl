@@ -1,0 +1,3 @@
+version=4
+opts=repacksuffix=+repack1,uversionmangle=s/(\d)[_\.\-\+]?((RC|rc|pre|dev|beta|alpha|b|a)\d*)$/$1~$2/,dversionmangle=s/\+(repack|debian|dfsg|ds|deb|-dfsg)\d*$// \
+https://www.coin-or.org/download/source/Cgl/Cgl-(\d\S*).(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))

@@ -1,0 +1,44 @@
+From: Helmut Grohne <helmut@subdivi.de>
+Date: Thu, 1 Oct 2020 16:35:47 +0200
+Subject: cross
+
+This patch fixes FTBFS during cross compilation. The root cause
+is somehow complicated, and the detailed analysis can be found
+in the linked Debian bug report.
+
+Bug-Debian: https://bugs.debian.org/971559
+Forwarded: no
+---
+ BuildTools/coin.m4 | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/BuildTools/coin.m4 b/BuildTools/coin.m4
+index e7bdcd2..6c31d16 100644
+--- a/BuildTools/coin.m4
++++ b/BuildTools/coin.m4
+@@ -665,9 +665,8 @@ AC_LANG_POP(C++)
+ # given my the user), and find an appropriate value for CFLAGS.  It is
+ # possible to provide additional -D flags in the variable CDEFS.
+ 
+-AC_DEFUN([AC_COIN_PROG_CC],
+-[AC_REQUIRE([AC_COIN_ENABLE_MSVC])
+-AC_LANG_PUSH(C)
++AC_DEFUN([AC_COIN_PROG_CC_HEAD],
++[
+ 
+ # For consistency, we set the C compiler to the same value of the C++
+ # compiler, if the C++ is set, but the C compiler isn't (only for CXX=cl)
+@@ -726,6 +725,13 @@ AC_PROG_CC([$comps])
+ if test -z "$CC" ; then
+   AC_MSG_ERROR([Failed to find a C compiler!])
+ fi
++])
++AC_DEFUN([AC_COIN_PROG_CC],
++[AC_REQUIRE([AC_COIN_ENABLE_MSVC])
++dnl Separate the head of this macro to AC_COIN_PROG_CC_HEAD such that it
++dnl controls the invocation of AC_PROG_CC instead of the AC_TRY_LINK below.
++AC_REQUIRE([AC_COIN_PROG_CC_HEAD])
++AC_LANG_PUSH(C)
+ # Autoconf incorrectly concludes that cl recognises -g. It doesn't.
+ case "$CC" in
+   clang* ) ;;

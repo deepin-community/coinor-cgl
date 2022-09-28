@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_autoreconf:
+	dh_autoreconf autoreconf -- --force --install --no-recursive --include=BuildTools
+	# The line above should be replaced by the following command (as well as dh>10).
+	# Also, upstream's broken buildsystem needs more fixing before the switch.
+	#
+	#dh_autoreconf debian/autogen.sh
+
+override_dh_auto_configure:
+	dh_auto_configure -- --enable-static --enable-dot --enable-dependency-linking
+
+execute_after_dh_auto_build:
+	make doxydoc
+	$(RM) doxydoc/html/*.md5 doxydoc/html/*.dot doxydoc/html/*.map

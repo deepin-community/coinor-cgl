@@ -1,0 +1,2 @@
+Tests: check1
+Depends: coinor-libcgl-dev (>= 0.60.2+repack1-1), build-essential

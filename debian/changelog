@@ -1,0 +1,210 @@
+coinor-cgl (0.60.3+repack1-3) unstable; urgency=medium
+
+  * QA upload.
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints.
+    + coinor-libcgl1: Add Multi-Arch: same.
+    + coinor-libcgl-dev: Add Multi-Arch: same.
+    + coinor-libcgl-doc: Add Multi-Arch: foreign.
+
+  [ Boyuan Yang ]
+  * Rebuild against autoconf 2.71. (Closes: #978789)
+  * Bump Standards-Version to 4.6.0.
+  * debian/upstream/metadata: Use better format.
+  * debian/not-installed: Be specific on what is not installed.
+  * debian/patches/cross.patch: Add patch to fix FTBFS in cross
+    compilation. (Closes: #971559)
+
+ -- Boyuan Yang <byang@debian.org>  Fri, 03 Sep 2021 22:38:42 -0400
+
+coinor-cgl (0.60.3+repack1-2) unstable; urgency=medium
+
+  * QA upload.
+  * Remove compression on Makefile
+
+ -- Håvard Flaget Aasen <haavard_aasen@yahoo.no>  Wed, 19 Feb 2020 19:10:07 +0100
+
+coinor-cgl (0.60.3+repack1-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version 0.60.3+repack1
+  * Update Standards-Version to 4.5.0
+  * Changes to include BuildTools in source, needed to use
+    autoreconf during build.
+    - Change URI in d/watch
+    - Update Files-Excluded in d/copyright
+    - Change path in d/coinor-libcgl-doc.examples
+    - Change path in d/tests/check1
+    - Change to autoreconf in d/rules
+  * Update version on runtime and build-dependencies.
+  * Compress Makefile in examples folder
+
+ -- Håvard Flaget Aasen <haavard_aasen@yahoo.no>  Tue, 18 Feb 2020 18:31:52 +0100
+
+coinor-cgl (0.60.2+repack1-1) unstable; urgency=medium
+
+  * QA upload
+  [ Debian Janitor ]
+  * Drop use of autotools-dev debhelper.
+  * Update standards version to 4.4.1, no changes needed.
+  * Set upstream metadata fields: Bug-Submit.
+  * Use secure URI in debian/watch.
+
+  [ Håvard Flaget Aasen ]
+  * New upstream version 0.60.2+repack1
+  * Change to debhelper-compat
+  * Dependencies in debian control.
+    - Change from doxygen-latex to doxygen
+    - Remove autotools-dev
+    - Update version for build- and runtime-dependencies
+  * Update debian/watch
+    - Add repack suffix
+    - Bump to version 4
+  * Create debian/coinor-libcgl-doc.links to link duplicated files
+  * Use source created jquery.js in *.doc package
+  * Remove debian/tmp/usr/share/coin from coinor-libcgl-dev.install
+  * Create autopkgtest.
+
+ -- Håvard Flaget Aasen <haavard_aasen@yahoo.no>  Mon, 30 Dec 2019 00:41:19 +0100
+
+coinor-cgl (0.59.10+repack1-2) unstable; urgency=medium
+
+  * QA upload
+
+  [ Jelmer Vernooĳ ]
+  * Change priority extra to priority optional.
+
+  [ Anton Gladky ]
+  * [48d8b90] Set Standards-Version: 4.3.0. Update VCS-fields.
+  * [17661e4] Orphan the package
+
+ -- Anton Gladky <gladk@debian.org>  Wed, 07 Aug 2019 20:17:13 +0200
+
+coinor-cgl (0.59.10+repack1-1) unstable; urgency=medium
+
+  * Uplod into unstable.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 21 Aug 2017 21:29:56 +0200
+
+coinor-cgl (0.59.10+repack1-1~exp1) experimental; urgency=medium
+
+  * [69ecc52] New upstream version 0.59.10+repack1
+  * [79a9b71] Set Standards-Version: 4.0.0
+  * [44f8ece] Update versions in depends-section.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 21 Aug 2017 08:04:32 +0200
+
+coinor-cgl (0.59.9+repack1-1~exp2) experimental; urgency=medium
+
+  * [3ed5244] Add coinor-libcoinutils-dev to depends.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 05 Jun 2017 19:01:03 +0200
+
+coinor-cgl (0.59.9+repack1-1~exp1) experimental; urgency=medium
+
+  * [0c245a4] Set minimal clp version 1.16.10
+  * [eece623] Update d/watch
+  * [61ce48f] Remove unneeded for the build files from the package.
+  * [bcc660c] New upstream version 0.59.9+repack1
+  * [1360c58] Set compat level 10.
+  * [c92c917] Remove dbg-package
+  * [797bee7] Use maximal hardening.
+  * [14919f0] Remove applied by upstream patch.
+  * [1d07ab9] Apply cme fix dpkg.
+  * [4e2ecca] Update version number in dependencies.
+  * [201493b] New upstream version 0.59.9+repack1
+  * [fa14dd8] Remove Miles Lubin from uploaders. (Closes: #862818)
+  * [38b61e7] Add myself to uploaders.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 05 Jun 2017 16:42:25 +0200
+
+coinor-cgl (0.58.9-1) unstable; urgency=low
+
+  * New upstream version.
+  * Use dh_autotools-dev to update config.{sub,guess} for new ports.
+    - Thanks to Adam Conrad
+  * Remove shlibdeps patch incorporated upstream with configure option
+  * Remove missing-headers patch incorporated upstream
+
+ -- Miles Lubin <miles.lubin@gmail.com>  Wed, 03 Sep 2014 17:45:03 -0400
+
+coinor-cgl (0.58.4-2) unstable; urgency=low
+
+  * Team upload.
+  * Really upload to unstable.
+
+ -- Sébastien Villemot <sebastien@debian.org>  Sat, 30 Nov 2013 23:40:52 +0100
+
+coinor-cgl (0.58.4-1) experimental; urgency=low
+
+  * New upstream version.
+    - Fixes build failure on 32-bit platforms.
+  * Switch to upstream's packager-friendly tarballs.
+  * Bump standards version (no changes needed).
+  * Upload to unstable for transition.
+
+ -- Miles Lubin <miles.lubin@gmail.com>  Wed, 27 Nov 2013 23:53:45 -0500
+
+coinor-cgl (0.58.2-1) experimental; urgency=low
+
+  * New upstream release (Closes: #686579)
+    - License changed to EPL.
+    - SONAME version is now 1.
+  * New maintainer (Closes: #645080)
+    - Previous maintainer refused to relicense work under EPL.
+  * Bump to compat 9 (libraries now installed to multiarch dirs.).
+  * Add patch to fix building with pkg-config.
+  * Add patch to fix shared library dependencies.
+  * Add patch to install missing header file.
+  * Bump standards version.
+    - Updated copyright file to machine-readable format.
+  * Update package descriptions.
+
+ -- Miles Lubin <miles.lubin@gmail.com>  Sat, 12 Oct 2013 20:50:37 -0400
+
+coinor-cgl (0.55.0-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "replace doxygen and texlive-* build dependencies with doxygen-
+    latex": do as the bug report requests.
+    (Closes: #616203)
+  * Don't install .la file.
+    (Closes: #633173)
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 25 Feb 2012 17:21:42 +0100
+
+coinor-cgl (0.55.0-1) unstable; urgency=low
+
+  * New upstream version (no changes required).
+    - Build depend on coinor-libcoinutils-dev (>= 2.6.0-2),
+      coinor-libosi-dev (>= 0.102.1),
+      coinor-libclp-dev (>= 1.11.0) (Closes: #571382)
+  * Bump standards version (no changes required).
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Tue, 02 Mar 2010 07:21:53 +0100
+
+coinor-cgl (0.54.2-1) unstable; urgency=low
+
+  * New upstream version (no changes required).
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Wed, 14 Oct 2009 06:43:54 +0200
+
+coinor-cgl (0.54.1-1) unstable; urgency=low
+
+  * New upstream version (no changes required).
+  * Add README.source and bump standards version.
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Thu, 24 Sep 2009 16:03:23 +0200
+
+coinor-cgl (0.54.0-2) unstable; urgency=low
+
+  * Add lapack or atlas to build depends, fixes FTBS (Closes: #541699)
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Sat, 15 Aug 2009 20:23:10 +0200
+
+coinor-cgl (0.54.0-1) unstable; urgency=low
+
+  * Initial Release  (Closes: #509871)
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Sun, 26 Jul 2009 22:10:10 +0200

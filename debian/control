@@ -1,0 +1,71 @@
+Source: coinor-cgl
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Section: science
+Priority: optional
+Build-Depends: coinor-libclp-dev (>= 1.17.5),
+               coinor-libcoinutils-dev (>= 2.11.4),
+               debhelper-compat (= 10),
+               doxygen,
+               graphviz,
+               libbz2-dev,
+               liblapack-dev,
+               pkg-config,
+               zlib1g-dev,
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/science-team/coinor-cgl
+Vcs-Git: https://salsa.debian.org/science-team/coinor-cgl.git
+Homepage: https://projects.coin-or.org/Cgl
+
+Package: coinor-libcgl1
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Multi-Arch: same
+Description: COIN-OR Cut Generation Library
+ The Cut Generation Library (Cgl) is an open collection of cutting plane
+ implementations ("cut generators") for use in teaching, research, and
+ applications.
+ .
+ Cgl is part of the larger COIN-OR initiative (Computational Infrastructure
+ for Operations Research) and can be used with other COIN-OR packages that
+ make use of cuts, such as the mixed-integer linear programming solver Cbc.
+ .
+ This package contains the binaries and libraries.
+
+Package: coinor-libcgl-dev
+Architecture: any
+Section: libdevel
+Depends: coinor-libcgl1 (= ${binary:Version}),
+         coinor-libclp-dev (>= 1.17.5),
+         coinor-libcoinutils-dev (>= 2.11.4),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Multi-Arch: same
+Description: COIN-OR Cut Generation Library (developer files)
+ The Cut Generation Library (Cgl) is an open collection of cutting plane
+ implementations ("cut generators") for use in teaching, research, and
+ applications.
+ .
+ Cgl is part of the larger COIN-OR initiative (Computational Infrastructure
+ for Operations Research) and can be used with other COIN-OR packages that
+ make use of cuts, such as the mixed-integer linear programming solver Cbc.
+ .
+ This package contains the header files for developers.
+
+Package: coinor-libcgl-doc
+Architecture: all
+Section: doc
+Depends: libjs-jquery,
+         ${misc:Depends}
+Recommends: coinor-libcgl-dev
+Multi-Arch: foreign
+Description: COIN-OR Cut Generation Library (documentation)
+ The Cut Generation Library (Cgl) is an open collection of cutting plane
+ implementations ("cut generators") for use in teaching, research, and
+ applications.
+ .
+ Cgl is part of the larger COIN-OR initiative (Computational Infrastructure
+ for Operations Research) and can be used with other COIN-OR packages that
+ make use of cuts, such as the mixed-integer linear programming solver Cbc.
+ .
+ This package contains the documentation and examples.
