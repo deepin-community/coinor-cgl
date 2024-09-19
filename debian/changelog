@@ -1,3 +1,9 @@
+coinor-cgl (0.60.3+repack1-3deepin0) unstable; urgency=medium
+
+  * No source change upload against GCC 12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Thu, 19 Sep 2024 22:43:50 +0800
+
 coinor-cgl (0.60.3+repack1-3) unstable; urgency=medium
 
   * QA upload.
